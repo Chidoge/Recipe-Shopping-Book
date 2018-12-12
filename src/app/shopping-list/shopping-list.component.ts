@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Ingredient } from '../shared/ingredient.model';
 
+import { ShoppingListService } from './shopping-list.service';
+
 @Component({
 	selector: 'app-shopping-list',
 	templateUrl: './shopping-list.component.html',
@@ -9,16 +11,25 @@ import { Ingredient } from '../shared/ingredient.model';
 })
 export class ShoppingListComponent {
 
-	ingredients: Ingredient[] = [
-		new Ingredient('Apple',5),
-		new Ingredient('Tomato',10),
-	];
+	public ingredients: Ingredient[] = [];
 
-	constructor() {
+	constructor(private shoppingListService : ShoppingListService) {}
 
+	ngOnInit() {
+
+		this.ingredients = this.shoppingListService.getIngredients();
+
+		/* When ingredient is added, an event is emitted which should update the ingredients since 
+			this class only stores a COPY of the ingredients and not a reference to the array stored in 
+			the service class. */
+		this.shoppingListService.isIngredientAdded()
+		.subscribe(
+			() => {
+				this.ingredients = this.shoppingListService.getIngredients();
+			}
+		)
 	}
 
-	onIngredientAdded(ingredient : Ingredient) {
-		this.ingredients.push(ingredient);
-	}
+
+
 }
