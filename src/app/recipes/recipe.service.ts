@@ -45,6 +45,10 @@ export class RecipeService {
 		return this.recipes.slice();
 	}
 
+	getRecipe(id : number) {
+		return this.recipes[id];
+	}
+
 	isRecipeSelected() {
 		return this.recipeSelected;
 	}
