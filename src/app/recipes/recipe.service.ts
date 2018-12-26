@@ -47,14 +47,6 @@ export class RecipeService {
 		return this.recipes[id];
 	}
 
-	isRecipeSelected() {
-		return this.recipeSelected;
-	}
-
-	selectRecipe(recipe : Recipe) {
-		this.recipeSelected.emit(recipe);
-	}
-
 	addIngredientsToShoppingList(ingredients : Ingredient[]) {
 		this.shoppingListService.addIngredients(ingredients);
 	}
