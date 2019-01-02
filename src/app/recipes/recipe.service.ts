@@ -49,6 +49,11 @@ export class RecipeService {
 	getRecipe(id : number) {
 		return this.recipes[id];
 	}
+
+	updateRecipes(recipes : any[]) {
+		this.recipes = recipes;
+		this.recipesChanged.next();
+	}
 	
 	addIngredientsToShoppingList(ingredients : Ingredient[]) {
 		this.shoppingListService.addIngredients(ingredients);
