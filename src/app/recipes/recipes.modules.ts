@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RecipesRoutingModule } from './recipes-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { RecipesComponent } from './recipes.component';
-import { DropdownDirective } from '../shared/dropdown.directive';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeStartComponent } from './recipe-start/recipe-start.component'; 
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
@@ -19,13 +19,13 @@ import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 		RecipeStartComponent,
 		RecipeDetailComponent,
 		RecipeItemComponent,
-		RecipeEditComponent,
-		DropdownDirective
+		RecipeEditComponent
 	],
 	imports : [
 		CommonModule,
 		ReactiveFormsModule,
-		RecipesRoutingModule
+		RecipesRoutingModule,
+		SharedModule
 	]
 })
 
