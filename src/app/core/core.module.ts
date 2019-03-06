@@ -10,23 +10,23 @@ import { RecipeService } from '../recipes/recipe.service';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    HomeComponent
-  ],
-  imports: [
-    SharedModule,
-    AppRoutingModule
-  ],
-  exports: [
-    AppRoutingModule,
-    HeaderComponent
-  ],
-  providers: [
-    ShoppingListService,
-    RecipeService,
-    DataStorageService,
-    AuthService
-  ]
+	declarations: [
+		HeaderComponent,
+		HomeComponent
+	],
+	imports: [
+		SharedModule,
+		AppRoutingModule
+	],
+	exports: [
+		AppRoutingModule,
+		HeaderComponent
+	],
+	providers: [
+		ShoppingListService,
+		RecipeService,
+		DataStorageService,
+		AuthService
+	]
 })
 export class CoreModule {}
