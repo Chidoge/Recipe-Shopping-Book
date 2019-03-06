@@ -1,5 +1,4 @@
 import * as AuthActions from './auth.actions';
-import { StartEdit } from 'src/app/shopping-list/store/shopping-list.actions';
 
 export interface State {
     token: string;
