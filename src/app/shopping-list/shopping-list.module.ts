@@ -7,12 +7,12 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 
 @NgModule({
 	declarations: [
-		ShoppingListComponent,
-		ShoppingEditComponent
+	ShoppingListComponent,
+	ShoppingEditComponent
 	],
 	imports: [
-		CommonModule,
-		FormsModule
+	CommonModule,
+	FormsModule
 	]
 })
 export class ShoppingListModule {}

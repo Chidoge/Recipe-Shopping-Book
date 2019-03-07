@@ -1,43 +1,40 @@
 import { Action } from '@ngrx/store';
 
-export const TRY_SIGN_UP = 'TRY_SIGN_UP';
-export const TRY_SIGN_IN = 'TRY_SIGN_IN';
-export const SIGN_UP = 'SIGN_UP';
-export const SIGN_IN = 'SIGN_IN';
-export const LOG_OUT = 'LOG_OUT';
+export const TRY_SIGNUP = 'TRY_SIGNUP';
+export const SIGNUP = 'SIGNUP';
+export const TRY_SIGNIN = 'TRY_SIGNIN';
+export const SIGNIN = 'SIGNIN';
+export const LOGOUT = 'LOGOUT';
 export const SET_TOKEN = 'SET_TOKEN';
 
-export class TrySignUp implements Action {
-    readonly type = TRY_SIGN_UP;
+export class TrySignup implements Action {
+	readonly type = TRY_SIGNUP;
 
-    constructor(public payload: {username: string, password: string}) {}
+	constructor(public payload: {username: string, password: string}) {}
 }
 
-export class TrySignIn implements Action {
-    
-    readonly type = TRY_SIGN_IN;
+export class TrySignin implements Action {
+	readonly type = TRY_SIGNIN;
 
-    constructor(public payload: {username: string, password: string}) {}
+	constructor(public payload: {username: string, password: string}) {}
 }
 
-
-export class SignUp implements Action {
-    readonly type = SIGN_UP;
+export class Signup implements Action {
+	readonly type = SIGNUP;
 }
 
-export class SignIn implements Action {
-    readonly type = SIGN_IN;
+export class Signin implements Action {
+	readonly type = SIGNIN;
 }
 
-export class LogOut implements Action {
-    readonly type = LOG_OUT;
+export class Logout implements Action {
+	readonly type = LOGOUT;
 }
 
 export class SetToken implements Action {
+	readonly type = SET_TOKEN;
 
-    readonly type = SET_TOKEN;
-
-    constructor(public payload: string) {};
+	constructor(public payload: string) {}
 }
 
-export type AuthActions = SignUp | SignIn | LogOut | SetToken | TrySignUp | TrySignIn;
+export type AuthActions = Signup | Signin | Logout | SetToken | TrySignup | TrySignin;
